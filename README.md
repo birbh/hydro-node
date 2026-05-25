@@ -16,7 +16,7 @@ So seeing this I cleaned the valve and repositioned the rubber in the bottom. Th
 ## Why did I make it?
 
 The main motive of Hydronode is that it solves major issues such as:
-- frustrating unreliability of a hobbyisy irrigation setups and anexity of leaving plants unattended.
+- frustrating unreliability of a hobbyist irrigation setups and anexity of leaving plants unattended.
 - in standard low quality valve small plastics clog easily and lack mechanical seating needed for clean water distribution.by using a robust solenoid valve, I want to create a system that handles direct water line pressures safely without any leaking
 
 ## Initial coponents(planned):
