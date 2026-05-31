@@ -159,7 +159,7 @@ Tinkercad:  [solar and charging](https://www.tinkercad.com/things/fsAw2kbm3HE-so
 ### Pin mapping:
 ### Soil moisture sensor:
 | Component | ESP32 pin |
-| ------- | ------ | ------ |
+| ------- | ------ |
 | Soil Moisture sensor(AOUT) | GPIO34 | 
 | VCC | 3V3 |
 | GND | GND |
@@ -183,7 +183,7 @@ Tinkercad:  [solar and charging](https://www.tinkercad.com/things/fsAw2kbm3HE-so
 
 ### Solenoid valve:
 | Solenoid | Connection | 1N4007 diode |
-| ------- | ------ | 
+| ------- | ------ | ------ |
 | Solenoid Valve(+ve) | Relay(NO) | Stripe side |
 | Solenoid Valve(-ve) | 24V Adapter(-ve) | Non-stripe side |
 
