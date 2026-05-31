@@ -48,6 +48,7 @@ The main motive of Hydronode is that it solves major issues such as:
     - Oled display
     - Solar panel
     - Switch
+
     (Note: ensure that the electronics are secured and no conductive parts are touching each other)
     - Install the hinge model and mount it with screws as in the CAD.
 5. Assembling the water system:
@@ -65,7 +66,8 @@ The main motive of Hydronode is that it solves major issues such as:
     - Then TP4056 module to MT3608 boost converter
     - Then MT3608 boost converter to ESP32 usb port
 7. Upload the firmware to ESP32 and update the wifi credentials in firmware
-8. Test the system verifying all the components of the system(be sure to set the moisture sensor values according to your environmental condition)
+8. Test the system verifying all the components of the system
+(be sure to set the moisture sensor values according to your environmental condition)
 
 ### Final assembly:
 After successful testing:
@@ -81,8 +83,10 @@ After successful testing:
 1. First, power the esp32 and connect the valve system properly.
 2. Upload the firmware using arduino ide.
 3. Connect the ESP32 to your wifi network by editing a part in firmware:
-```const char* ssid="hydronode";
+```
+const char* ssid="hydronode";
 const char* password="soil@123";
+
 ```
 4. Open serial monitor in your pc and copy the ESP32 IP address. eg: 192.168.1.5
 5. Open the IP address in your browser while connected to the same wifi.
@@ -91,6 +95,7 @@ const char* password="soil@123";
 - enable AUTO mode
 - manually control watering
 7. Place the sensor into soil and connect the valve to the water line.
+
 (note: hydronode will also automatically water plants when soil becomes dry.)
 
 
@@ -101,7 +106,7 @@ const char* password="soil@123";
 - Manual watering from mobile
 - ESP32 Wifi web dashboard
 - Solar powered green energy system
-- Industrial grade 24 V solenoid valve
+- Industrial grade 24V solenoid valve
 - Low cost modular design
 
 ## Web Dashboard:
@@ -154,7 +159,7 @@ Tinkercad:  [solar and charging](https://www.tinkercad.com/things/fsAw2kbm3HE-so
 ### Pin mapping:
 ### Soil moisture sensor:
 | Component | ESP32 pin |
-| ------- | ------ | 
+| ------- | ------ | ------ |
 | Soil Moisture sensor(AOUT) | GPIO34 | 
 | VCC | 3V3 |
 | GND | GND |
@@ -188,7 +193,7 @@ Tinkercad:  [solar and charging](https://www.tinkercad.com/things/fsAw2kbm3HE-so
 | 24V Adapter(+ve) | Relay(COM) |
 | 24V Adapter(-ve) | Solenoid Valve(-ve) |
 
-### Charging and boost
+### Charging and boost:
 ### TP4056 charging module:
 | Module | Connection |
 | ------- | ------ | 
@@ -199,7 +204,7 @@ Tinkercad:  [solar and charging](https://www.tinkercad.com/things/fsAw2kbm3HE-so
 | OUT+ | MT3608 Boost(VIN+) |
 | OUT- | MT3608 Boost(VIN-) |
 
-### MT3608 Boost converter(set to 5V)
+### MT3608 Boost converter(set to 5V):
 | Module | Connection |
 | ------- | ------ | 
 | VIN+ | TP4056(OUT+) |
