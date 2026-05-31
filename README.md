@@ -2,6 +2,9 @@
 
 Hydronode is an ESP32 based smart irrigation and plant monitoring system which is designed to automate watering using industrial grade solenoid feed valve.
 
+<img width="1410" height="2000" alt="hydronode" src="https://github.com/user-attachments/assets/b5c2abea-d442-4dd7-a66c-f98abe347134" />
+
+
 ## What is this project??
 This project is a self thinking, internet connected plant care and monitoring system that bridges the gap between hardware and earth. Unlike some DIY kits which rely on cheap and low quality pump, this project uses heavy duty solenoid water feed valve which was designed for water purifiers. The moisture sensor continuously tracks the soil vitals and serves local interface right from microcontroller. 
 
@@ -128,11 +131,20 @@ This hybrid power architecture improves efficiency portability and long term rel
 ## CAD:
 ### SS:
 
+<img width="917" height="490" alt="Screenshot 2026-05-31 at 4 35 32 PM" src="https://github.com/user-attachments/assets/e930e68b-4a1a-40d4-b0ca-cec278cf6530" />
+<img width="894" height="678" alt="Screenshot 2026-05-31 at 4 39 03 PM" src="https://github.com/user-attachments/assets/279d2add-b94f-439a-a4bd-3b3728406873" />
+<img width="998" height="573" alt="Screenshot 2026-05-31 at 4 37 30 PM" src="https://github.com/user-attachments/assets/8f8f5f93-136b-44b9-8533-b38e675c1a05" />
+<img width="794" height="632" alt="Screenshot 2026-05-31 at 4 39 58 PM" src="https://github.com/user-attachments/assets/5c2d54bb-2e50-4ea5-b1b4-5400ca7ef76d" />
+
+
 ### Links:
 Onshape: [Hydronode](https://cad.onshape.com/documents/a54d490bebb072f24616d72a/w/eb742d430f9342788aa9bc21/e/95767b8b5a8d5928ced10f44?renderMode=0&uiState=6a1c0f1aa795d8111e87a7a2)
 
 ## Circuit:
 ### SS:
+<img width="1083" height="669" alt="solar+charging" src="https://github.com/user-attachments/assets/c93fdc69-52b5-44be-a1be-2b728e006b2e" />
+<img width="799" height="790" alt="esp-circuit" src="https://github.com/user-attachments/assets/1f02cb2b-bef8-457a-853e-d2d4b7dc8388" />
+
 
 ### Links:
 Wokwi: [esp-circuit](Uhttps://wokwi.com/projects/464828058447249409RL)
