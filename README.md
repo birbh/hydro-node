@@ -152,7 +152,7 @@ Onshape: [Hydronode](https://cad.onshape.com/documents/a54d490bebb072f24616d72a/
 
 
 ### Links:
-Wokwi: [esp-circuit](https://wokwi.com/projects/464828058447249409RL)
+Wokwi: [esp-circuit](https://wokwi.com/projects/464828058447249409)
 
 Tinkercad:  [solar and charging](https://www.tinkercad.com/things/fsAw2kbm3HE-solar-hydronode?sharecode=bEeTNQzSeW2zAY5gLIxz8n3GflD4GGp1yJB8_YdFxDo)
 
