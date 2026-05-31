@@ -19,6 +19,60 @@ The main motive of Hydronode is that it solves major issues such as:
 - frustrating unreliability of a hobbyist irrigation setups and anexity of leaving plants unattended.
 - in standard low quality valve small plastics clog easily and lack mechanical seating needed for clean water distribution by using a robust solenoid valve, I want to create a system that handles direct water line pressures safely without any leaking.
 
+## How to build it?
+### Prepare the enclosure:
+
+1. 3D Print the enclosure and lid as shown in CAD model.(OR buy a waterproof box)
+2. If you buy a waterproof box, create mounts for:
+    - USB charging module
+    - Solar mount
+    - OLED display
+    - Battery holder
+    - Relay holder
+    - Boost converter
+    - ESP32 mount
+    - Hinge mount
+    - Wire holes 
+    - Switch mount
+3. Secure all components using screws, standoffs or adhesive mounts
+4. Install internal electronics and mount them as follows:
+    - ESP32 Devkit V1
+    - Relay module
+    - Breadboard(use the dedicated tape in the breadboard to mount it)
+    - TP4056 Charging Module(use my custom part in CAD for this)
+    - MT3608 Boost Converter
+    - 18650 battery holder
+    - Oled display
+    - Solar panel
+    - Switch
+    (Note: ensure that the electronics are secured and no conductive parts are touching each other)
+    - Install the hinge model and mount it with screws as in the CAD.
+5. Assembling the water system:
+    - Connect the plumbing as shown in the CAD:
+        - WATER SOURCE -> SOLENOID VALVE -> PLANT POT
+    - The valve should be installed inline between the water source and the plant irrigation pipe.
+    - Use 1/4" inch RO tubing and compatible connectors to prevent leaks
+    - Install soil moisture sensor vertically into the soil near plant roots
+    - Avoid placing the sensor directly beside the water outlet, as this may produce inaccurate recordings
+    - Connect the relay and valve with 24V DC adapter
+    - Install a 1N4007 flyback diode across the valve terminals to prevent it from voltage spikes.
+6. Configure the power system:
+    - First set the MT3608 output to exactly 5V using the multimeter
+    - Connect the solar panel to TP4056 charging module
+    - Then TP4056 module to MT3608 boost converter
+    - Then MT3608 boost converter to ESP32 usb port
+7. Upload the firmware to ESP32 and update the wifi credentials in firmware
+8. Test the system verifying all the components of the system(be sure to set the moisture sensor values according to your environmental condition)
+
+### Final assembly:
+After successful testing:
+- Organize wiring neatly
+- close the enclosure
+- connect the permanent water source
+- seal cable openings to prevent short circuits
+- ensure the electronics never come in contact with water
+
+
 ## How to use it??
 
 1. First, power the esp32 and connect the valve system properly.
@@ -52,7 +106,7 @@ const char* password="soil@123";
 HydroNode includes a built in mobile friendly web interface hosted directly on ESP32.
 This dashboard allows user to:
 
-- Monitorsoil moisture percentage
+- Monitor soil moisture percentage
 - Check valve status
 - Enable auto irrigation mode
 - Manually turn watering ON and OFF
@@ -68,8 +122,76 @@ This dashboard allows user to:
 
 ## Power System:
 The ESP32 is powered using a rechaargable 18650 battery combined with solar assisted charging.
-The valve sysrem uses dedicated 24V adapter ro safely handle higher current requirements.
+The valve system uses dedicated 24V adapter ro safely handle higher current requirements.
 This hybrid power architecture improves efficiency portability and long term reliability.
+
+## CAD:
+### SS:
+
+### Links:
+Onshape: [Hydronode](https://cad.onshape.com/documents/a54d490bebb072f24616d72a/w/eb742d430f9342788aa9bc21/e/95767b8b5a8d5928ced10f44?renderMode=0&uiState=6a1c0f1aa795d8111e87a7a2)
+
+## Circuit:
+### SS:
+
+### Links:
+Wokwi: [esp-circuit](Uhttps://wokwi.com/projects/464828058447249409RL)
+Tinkercad:  [solar and charging](https://www.tinkercad.com/things/fsAw2kbm3HE-solar-hydronode?sharecode=bEeTNQzSeW2zAY5gLIxz8n3GflD4GGp1yJB8_YdFxDo)
+
+### Pin mapping:
+### Soil moisture sensor:
+| Component | ESP32 pin |
+| ------- | ------ | 
+| Soil Moisture sensor(AOUT) | GPIO34 | 
+| VCC | 3V3 |
+| GND | GND |
+
+### Relay module:
+| Relay pin | Connection |
+| ------- | ------ | 
+| VCC | VIN(5V) | 
+| GND | GND | 
+| IN | GPIO26 | 
+| NO | Solenoid Valve(+ve) |
+| COM | 24V Adapter(+ve) |
+
+### OLED Pin:
+| OLED | ESP32 pin |
+| ------- | ------ | 
+| VCC | 3V3 |
+| GND | GND |
+| OLED SDA | GPIO21 | 
+| OLED SCL | GPIO22 | 
+
+### Solenoid valve:
+| Solenoid | Connection | 1N4007 diode |
+| ------- | ------ | 
+| Solenoid Valve(+ve) | Relay(NO) | Stripe side |
+| Solenoid Valve(-ve) | 24V Adapter(-ve) | Non-stripe side |
+
+### 24V adapter:
+| Adapter | Connection |
+| ------- | ------ | 
+| 24V Adapter(+ve) | Relay(COM) |
+| 24V Adapter(-ve) | Solenoid Valve(-ve) |
+
+### Charging and boost
+### TP4056 charging module:
+| Module | Connection |
+| ------- | ------ | 
+| B+ | 3.6V li-ion battery(+ve) |
+| B- | 3.6V li-ion battery(-ve) |
+| IN+ | Solar panel(+ve) |
+| IN- | Solar panel(-ve) |
+| OUT+ | MT3608 Boost(VIN+) |
+| OUT- | MT3608 Boost(VIN-) |
+
+### MT3608 Boost converter(set to 5V)
+| Module | Connection |
+| ------- | ------ | 
+| VIN+ | TP4056(OUT+) |
+| VIN- | TP4056(OUT-) |
+| VOUT+ and VOUT- | Join to ESP32 usb port wires |
 
 
 ## Initial coponents(planned):
