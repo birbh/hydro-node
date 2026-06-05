@@ -2,7 +2,7 @@
 
 Hydronode is an ESP32 based smart irrigation and plant monitoring system which is designed to automate watering using industrial grade solenoid feed valve.
 
-<img width="1410" height="2000" alt="hydronode" src="https://github.com/user-attachments/assets/b5c2abea-d442-4dd7-a66c-f98abe347134" />
+<img width="1410" height="2000" alt="hydronode" src="https://github.com/user-attachments/assets/949573c8-4f26-48ae-9ce9-2b0fdcf55e6a" />
 
 
 ## What is this project??
